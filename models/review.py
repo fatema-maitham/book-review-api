@@ -13,5 +13,7 @@ class ReviewModel(BaseModel):
     book_id = Column(Integer, ForeignKey("books.id"), nullable=False)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
 
+    title = Column(String, nullable=True)
+    
     book = relationship("BookModel", back_populates="reviews")
     user = relationship("UserModel", back_populates="reviews")

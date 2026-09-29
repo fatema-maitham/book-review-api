@@ -14,3 +14,6 @@ class BookModel(BaseModel):
 
   user = relationship("UserModel", back_populates="books")
   reviews = relationship("ReviewModel", back_populates="book")
+
+  genre = Column(String, nullable=True)
+  publication_year = Column(Integer, nullable=True)
